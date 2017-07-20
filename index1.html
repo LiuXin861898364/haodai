@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.clear:after{ display:block; content:''; clear:both;}
+			.box{
+				margin: 50px auto;
+				width: 326px;
+				height: 400px;
+				padding: 0 22px;
+				background: gray;
+				color: #fff;
+			}
+			.box div .tit span:first-child{
+				float: left;
+			}
+			.box div .tit span:last-child{
+				float: right;
+			}
+			.inp{
+				height: 42px;
+				color: #808080;
+			}
+			.sel{
+				margin-left: -5px;
+				height: 46px;
+				color: #808080;
+			}
+			div{
+				margin-top: 20px;
+			}
+			p{
+				margin-top: 8px;
+			}
+			button{
+				width: 238px;
+				height: 40px;
+				background: #0094ef;
+				color: #fff;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h1>快速搜索消费贷款</h1>
+			<div>
+				<p class="tit clear">
+					<span>贷款金额：</span>
+					<span>不足一万可用小数表示</span>
+				</p>
+				<p class="cont">
+					<input type="text" id="inp" class="inp" />
+					<select id="sel" class="sel">
+						<option></option>
+						<option>5万元</option>
+						<option>10万元</option>
+						<option>15万元</option>
+						<option>20万元</option>
+						<option>25万元</option>
+						<option>30万元</option>
+					</select>
+				</p>
+			</div>
+			<div class="div2">
+				<p class="tit clear">
+					<span>贷款期限：</span>
+					<span></span>
+				</p>
+				<p class="cont">
+					<input type="text" id="inp1" class="inp" />
+					<select id="sel1"  class="sel">
+						<option></option>
+						<option>6个月</option>
+						<option>1年</option>
+						<option>18个月</option>
+						<option>2年</option>
+						<option>3年</option>
+						<option>5年</option>
+						<option>10年</option>
+					</select>
+				</p>
+			</div>
+			<button>搜索一下</button>
+		</div>
+	</body>
+</html>
+<script>
+    document.getElementById("sel").onclick = function(){
+        document.getElementById("inp").value = this.value;
+//      this.value = "";
+    }
+    document.getElementById("sel1").onclick = function(){
+        document.getElementById("inp1").value = this.value;
+    }
+</script>

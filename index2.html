@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{
+				background: blueviolet;
+			}
+			.clear:after{ display:block; content:''; clear:both;}
+			.box{
+				margin: 50px auto;
+				width: 326px;
+				height: 400px;
+				padding: 0 22px;
+				background: gray;
+				color: #fff;
+			}
+			.box div .tit span:first-child{
+				float: left;
+			}
+			.box div .tit span:last-child{
+				float: right;
+			}
+			.inp{
+				height: 42px;
+				color: #808080;
+				outline: none;
+			}
+			.box div .cont{
+				position: relative;
+			}
+			.dw{
+				position: absolute;
+				top: 145px;
+				right: 684px;
+				color: #808080;
+			}
+			.sel{
+				position: absolute;
+				right: 614px;
+				top: 141px;
+				margin-left: 5px;
+				height: 46px;
+				/*color: #808080;*/
+				list-style: none;
+				/*width: 50px;*/
+				width: 70px;
+				background: #fff;
+			}
+			.sel li{
+				background: #fff;
+				color: #666;
+				display: none;
+			}
+			.sel2{
+				position: absolute;
+				right: 614px;
+				top: 236px;
+				/*margin-left: -5px;*/
+				height: 46px;
+				/*color: #808080;*/
+				list-style: none;
+				width: 70px;
+				background: #fff;
+			}
+			.sel2 li{
+				background: #fff;
+				color: #666;
+				display: none;
+			}
+			div{
+				margin-top: 20px;
+			}
+			p{
+				margin-top: 8px;
+			}
+			button{
+				width: 238px;
+				height: 40px;
+				background: #0094ef;
+				color: #fff;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h1>快速搜索消费贷款</h1>
+			<div>
+				<p class="tit clear">
+					<span>贷款金额：</span>
+					<span>不足一万可用小数表示</span>
+				</p>
+				<p class="cont">
+					<input type="text" id="inp" class="inp" />
+					<p class="dw">万元</p>
+					<ul id="sel" class="sel">
+						<li> </li>
+						<li>5</li>
+						<li>10</li>
+						<li>15</li>
+						<li>20</li>
+						<li>25</li>
+						<li>30</li>
+					</ul>
+				</p>
+			</div>
+			<div class="div2">
+				<p class="tit clear">
+					<span>贷款期限：</span>
+					<span></span>
+				</p>
+				<p class="cont">
+					<input type="text" id="inp1" class="inp" />
+					<ul id="sel1" class="sel sel2">
+						<li></li>
+						<li>6个月</li>
+						<li>1年</li>
+						<li>18个月</li>
+						<li>2年</li>
+						<li>3年</li>
+						<li>5年</li>
+						<li>10年</li>
+					</ul>
+				</p>
+			</div>
+			<button>搜索一下</button>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.7.2.js"></script>
+<script>
+	$("#sel").click(function(){
+		$("#sel li").css({"display":"block"});
+			$("#sel li").each(function(){
+				$(this).click(function(){
+					$("#inp").val($(this).html())
+					$("#sel li").css({"display":"none"});
+					return false;
+				})
+			})
+		return false;
+	})
+	$("#sel1").click(function(){
+		$("#sel1 li").css({"display":"block"});
+			$("#sel1 li").each(function(){
+				$(this).click(function(){
+					$("#inp1").val($(this).html())
+					$("#sel1 li").css({"display":"none"});
+					return false;
+				})
+			})
+		return false;
+	})
+</script>
